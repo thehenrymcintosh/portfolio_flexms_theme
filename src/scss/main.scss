@@ -58,18 +58,19 @@ body {
 }
 
 section {
-  padding: 30px 20px;
+  padding: 30px 20px 60px;
   @include larger( 600px ) {
-    padding: 30px 70px;
+    padding: 30px 70px 60px;
   }
 
   @include larger( 900px ) {
-    padding: 30px 100px;
+    padding: 30px 100px 60px;
   }
 
   @include larger( 1200px ) {
-    padding: 30px 180px;
+    padding: 30px 180px 60px;
   }
+
 }
 
 .home-hero {
