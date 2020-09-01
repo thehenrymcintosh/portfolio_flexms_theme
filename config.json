@@ -1,0 +1,121 @@
+{
+  "layouts": [{
+    "name": "home",
+    "filename": "home",
+    "description": "Home Page template",
+    "data": [
+      {
+        "property": "hero_intro",
+        "name": "Home intro text",
+        "type": "text",
+        "isArray": true,
+        "description": "The intro text paragraphs"
+      },
+      {
+        "property": "projects",
+        "name": "Projects",
+        "type": "page",
+        "isArray": true,
+        "description": "The projects for the homepage.",
+        "whitelist": ["portfolio_project"]
+      },
+      {
+        "property":"work_experience",
+        "name": "Work Experience",
+        "type": "widget",
+        "isArray": true,
+        "description": "Work experience blocks.",
+        "whitelist": ["work_experience"]
+      },
+      {
+        "property":"contact_links",
+        "name": "Links for the contact area",
+        "type": "widget",
+        "isArray": true,
+        "description": "Contact links.",
+        "whitelist": ["link"]
+      }
+    ]
+  },
+  {
+    "name": "portfolio_project",
+    "filename": "project",
+    "description": "Portfolio Project template",
+    "data": [
+      {
+        "property": "name",
+        "name": "Project Name",
+        "type": "text",
+        "description": "The name of the project"
+      },
+      {
+        "property": "at",
+        "name": "Working At",
+        "type": "text",
+        "description": "Where I was working during the project"
+      },
+      {
+        "property": "promo_image",
+        "name": "Promo Image",
+        "type": "file",
+        "description": "Promo image of the work"
+      }
+    ]
+  }],
+  "widgets":[
+    {
+      "name": "work_experience",
+      "description": "Work experience block",
+      "data": [
+        {
+          "property": "date",
+          "name": "Date",
+          "description": "Date the role commenced",
+          "type": "text"
+        },{
+          "property": "role",
+          "name": "Role",
+          "description": "Name of the role",
+          "type": "text"
+        },{
+          "property": "company",
+          "name": "Company",
+          "description": "Feature card text",
+          "type": "text"
+        },{
+          "property": "key_points",
+          "name": "Key Points",
+          "description": "Important responsibilities, skills etc from the role",
+          "type": "textarea"
+        },{
+          "property": "left_bracket",
+          "name": "Left Bracket",
+          "description": "Left bracket decoration on desktop",
+          "type": "text"
+        },{
+          "property": "right_bracket",
+          "name": "Right Bracket",
+          "description": "Right bracket decoration on desktop",
+          "type": "text"
+        }
+      ]
+    },{
+      "name": "link",
+      "description": "Generic link",
+      "data":[ 
+        {
+          "property": "title",
+          "name": "Title",
+          "description": "Link title",
+          "type": "text"
+        },
+        {
+          "property": "url",
+          "name": "URL",
+          "description": "Link url",
+          "type": "url"
+        }
+      ]
+    }
+  ]
+}

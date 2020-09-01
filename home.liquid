@@ -1,0 +1,62 @@
+{% include 'header' %}
+<section class="home-hero">
+
+  <h1><span>Hi,</span> <span>I'm</span> <strong class="orange underline">Henry</strong></h1>
+  <h2 class="fade-up-in"><em>I make <span class="green">things</span> on the <span class="green">internet</span></em></h2>
+
+  <div class="home-hero__intro fade-up-in--2">
+    {% for paragraph in page.data.hero_intro %}
+      <p>{{ paragraph }}</p>
+    {% endfor %}
+    {% comment %} <p>I’m a passionate full stack JS developer. I love learning and making stuff.</p>
+    <p>At the moment, I’m learning Rust and blogging about the economics, philosophy, and use of coding.</p>
+    <p>I’m the head of development at <a href="#test">Roar Digital</a>, where we make beautiful websites for estate agents and highly efficient digital marketing campaigns for businesses with geographically specific services.</p>
+    <p>If you’re interested in working together you should <a href="#test">contact me</a>.</p> {% endcomment %}
+  </div>
+</section>
+
+<section class="projects-wrapper">
+  <h3 class="section-title">Projects</h3>
+  <div class="projects">
+
+    {% for project in page.data.projects %}
+      <a class="project" href="/{{ project.slug }}">
+        <h4 class="project__title">{{ project.data.name }}</h4>
+        <span class="project__company">@{{ project.data.at }}</span>
+        <span class="project__link"><span class="visually-hidden">View Project</span></span>
+        <img class="project__img" src="{{ project.data.promo_image.location }}" alt="{{ project.data.promo_image.caption }}">
+      </a>
+    {% endfor %}
+
+  </div>
+</section>
+
+<section class="experience-wrapper">
+  <h3 class="section-title">Experience</h3>
+  <div class="experiences">
+
+    {% for experience in page.data.work_experience %}
+      <div class="experience">
+        <span class="experience__left-bracket" aria-hidden="true">{{ experience.data.left_bracket }}</span>
+        <div class="experience__main">
+          <span class="experience__date"><span class="visually-hidden">Date: </span>{{ experience.data.date }}</span>
+          <h4 class="experience__name">{{ experience.data.role }}</h4>
+          <h5 class="experience__at">@{{ experience.data.company }}</h5>
+          <p class="experience__key-points">{{ experience.data.key_points }}</p>
+        </div>
+        <span class="experience__right-bracket" aria-hidden="true">{{ experience.data.right_bracket }}</span>
+      </div>
+    {% endfor %}
+
+
+  </div>
+</section>
+
+<section class="contact-section">
+  <h3 class="section-title">Contact</h3>
+  {% for link in page.data.contact_links %}
+    <a class="contact-link" target="_blank" href="{{ link.url }}">{{ link.name }}</a>
+  {% endfor %}
+</section>
+
+{% include 'footer' %}
