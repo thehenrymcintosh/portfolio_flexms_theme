@@ -28,6 +28,19 @@ html,body {
     opacity: 0;
   }
 }
+
+@keyframes wipe_2 {
+  0% {
+    width: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    width: calc(100% + 6px);
+  }
+}
 @keyframes wipe_vertical {
   100% {
     height: 15%;
@@ -226,15 +239,15 @@ nav {
       content: "";
       width: calc( 100% + 6px );
       left: -3px;
-      top: calc( 87% );
-      height: 0;
+      top: calc( 74% );
+      height: 3px;
       opacity: 0;
       background-color: $terra-cotta;
       display: block;
       z-index: -1;
       position: absolute;
       transition: transform 0.25s ease-in-out;
-      visibility: hidden;
+      // visibility: hidden;
     }
     transition: text-shadow 0.25s ease-in-out, transform 0.25s ease-in-out, color 0.25s ease-in-out;
     &:focus, &:hover {
@@ -244,7 +257,7 @@ nav {
     }
     &.active {
       &:before {
-        animation: 0.25s 0s wipe_vertical_2 cubic-bezier(0.83,-0.01, 0.01, 0.94) forwards;
+        animation: 0.5s 2.5s wipe_2 cubic-bezier(0.83,-0.01, 0.01, 0.94) forwards;
       }
       &:focus, &:hover {
         &:before {
@@ -272,6 +285,9 @@ nav {
   align-items: flex-start;
   max-width: 880px;
   margin: auto;
+  &__subtext {
+    margin-top: 50px;
+  }
 
 }
 .visually-hidden {
