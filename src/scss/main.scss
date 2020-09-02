@@ -365,6 +365,9 @@ nav {
       margin-top: 212px;
       margin-bottom: -150px;
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
