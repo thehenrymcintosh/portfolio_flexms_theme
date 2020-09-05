@@ -395,7 +395,10 @@ nav {
 }
 
 .experience {
-  padding: 20px 20px;
+  padding: 20px 24px 20px 0;
+  @include larger( 768px ) {
+    padding: 20px 0px;
+  }
   display: flex;
   align-items: center;
   position: relative;
@@ -408,7 +411,7 @@ nav {
       font-size: 2rem;
     }
     @include larger( 768px ) {
-      margin-bottom: 50px;
+      margin-bottom: 35px;
     }
   }
   &__name, &__at {
@@ -444,6 +447,9 @@ nav {
   }
   &__name, &__at, &__key-points {
     @include larger( 768px ) {
+      padding: 0 30px;
+    }
+    @include larger( 1200px ) {
       padding: 0 70px;
     }
   }
