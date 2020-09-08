@@ -289,7 +289,6 @@ nav {
   display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
-  max-width: 880px;
   margin: auto;
   &__subtext {
     margin-top: 50px;
@@ -312,7 +311,7 @@ nav {
   flex-wrap: wrap;
   width: 400px;
   max-width: 100%;
-  padding: 20px 20px;
+  padding: 20px 0px;
   box-sizing: content-box;
   color: $independence;
   text-decoration: none;
@@ -380,7 +379,7 @@ nav {
     max-height: 290px;
     object-fit: contain;
   }
-  @include between( 481px, 1240px ) {
+  @include between( 481px, 1000px ) {
     &:nth-child(2n) {
       margin-left: auto;
     }
@@ -393,10 +392,11 @@ nav {
     margin: 20px auto 30px;
     padding: 0;
   }
-  @include larger( 1240px ) {
+  @include larger( 1000px ) {
     &:nth-child(2n) {
       margin-top: 240px;
       margin-bottom: -70px;
+      margin-left: auto;
     }
     &:last-child {
       margin-bottom: 0;
