@@ -361,7 +361,9 @@ nav {
   &__img {
     width: 100%;
     margin-top: 16px;
-    background-color: green;
+    max-height: 290px;
+    object-fit: contain;
+    background: -webkit-linear-gradient(45deg,#c3b3c3,#e8cfe8);
   }
   @include between( 481px, 1240px ) {
     &:nth-child(2n) {
