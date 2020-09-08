@@ -28,6 +28,12 @@
         "whitelist": ["work_experience"]
       },
       {
+        "property": "contact_text",
+        "name": "Context for the contact area",
+        "type": "textarea",
+        "description": "Should be some intro text for the contact links."
+      },
+      {
         "property":"contact_links",
         "name": "Links for the contact area",
         "type": "widget",
@@ -49,6 +55,12 @@
         "description": "The name of the project"
       },
       {
+        "property": "summary",
+        "name": "Project Summary",
+        "type": "text",
+        "description": "One line summary of the project"
+      },
+      {
         "property": "at",
         "name": "Working At",
         "type": "text",
@@ -59,6 +71,12 @@
         "name": "Promo Image",
         "type": "file",
         "description": "Promo image of the work"
+      },
+      {
+        "property": "link_to_page",
+        "name": "Link to page",
+        "type": "text",
+        "description": "Should show a link to this page."
       }
     ]
   }],

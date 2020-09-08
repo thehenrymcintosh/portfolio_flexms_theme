@@ -278,6 +278,12 @@ nav {
   font-size: 2rem;
   font-weight: bold;
 }
+.section-p {
+  margin: 20px;
+  &:blank, &:empty {
+    display: none;
+  }
+}
 
 .projects {
   display: flex;
@@ -321,6 +327,16 @@ nav {
     margin: 0;
     font-size: 1rem;
     display: inline-block;
+  }
+  &__subtitle {
+    padding: 2px 14px 8px;
+    margin: 0;
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    &:blank, &:empty {
+      display: none;
+    }
   }
   &__link {
     display: inline-block;

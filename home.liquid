@@ -15,15 +15,18 @@
   </div>
 </section>
 
-<section class="projects-wrapper">
+<section class="projects-wrapper" id="projects">
   <h3 class="section-title">Projects</h3>
   <div class="projects">
 
     {% for project in page.data.projects %}
       <a class="project" href="/{{ project.slug }}">
         <h4 class="project__title">{{ project.data.name }}</h4>
+        <span class="project__subtitle">{{ project.data.summary }}</span>
         <span class="project__company">@{{ project.data.at }}</span>
-        <span class="project__link"><span class="visually-hidden">View Project</span></span>
+        {% if project.data.link_to_page == "checked" %}
+          <span class="project__link"><span class="visually-hidden">View Project</span></span>
+        {% endif %}
         <img class="project__img" src="{{ project.data.promo_image.location }}" alt="{{ project.data.promo_image.caption }}">
       </a>
     {% endfor %}
@@ -32,7 +35,7 @@
   <p class="projects__subtext">For details of my private projects, you should <a href="#contact">contact me</a>.</p>
 </section>
 
-<section class="experience-wrapper">
+<section class="experience-wrapper" id="experience">
   <h3 class="section-title">Experience</h3>
   <div class="experiences">
 
@@ -55,8 +58,9 @@
 
 <section id="contact" class="contact-section">
   <h3 class="section-title">Contact</h3>
+  <p class="section-p">{{ page.data.contact_text }}</p>
   {% for link in page.data.contact_links %}
-    <a class="contact-link" target="_blank" href="{{ link.data.url }}">{{ link.data.title }}</a>
+    <a class="contact-link" target="_blank" rel="noopener" href="{{ link.data.url }}">{{ link.data.title }}</a>
   {% endfor %}
 </section>
 
