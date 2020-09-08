@@ -24,9 +24,7 @@
         <h4 class="project__title">{{ project.data.name }}</h4>
         <span class="project__subtitle">{{ project.data.summary }}</span>
         <span class="project__company">@{{ project.data.at }}</span>
-        {% if project.data.link_to_page == "checked" %}
-          <span class="project__link"><span class="visually-hidden">View Project</span></span>
-        {% endif %}
+        <span class="project__link"><span class="visually-hidden">View Project</span></span>
         <img class="project__img" src="{{ project.data.promo_image.location }}" alt="{{ project.data.promo_image.caption }}">
       </a>
     {% endfor %}
