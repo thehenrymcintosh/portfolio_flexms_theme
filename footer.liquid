@@ -1,2 +1,41 @@
+<script>
+  var isInViewport = function (elem) {
+    var bounding = elem.getBoundingClientRect();
+    return (
+        bounding.bottom >= 0 &&
+        bounding.left >= 0 &&
+        bounding.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  };
+  document.addEventListener("DOMContentLoaded", function() {
+
+    var lqips = document.querySelectorAll("img[lqip]");
+    function load(lqip) {
+      var src = lqip.src.split("?")[0];
+      var loader = document.createElement("img");
+      loader.src = src;
+      loader.addEventListener('load',function(){
+        console.log("loaded ", src);
+        console.log(lqip);
+        loader.remove();
+        lqip.src = src;
+        lqip.removeAttribute("lqip");
+        lqips = document.querySelectorAll("img[lqip]");
+      })
+    }
+    function onScroll(event) {
+      var lqip;
+      for ( let i = 0; i < lqips.length; i++ ) {
+        lqip = lqips[i];
+        if (isInViewport(lqip)) {
+          load(lqip);
+        }
+      }
+    }
+    window.addEventListener('scroll', onScroll, {passive: true});
+    onScroll();
+  });
+</script>
 </body>
 </html>
