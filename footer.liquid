@@ -16,8 +16,6 @@
       var loader = document.createElement("img");
       loader.src = src;
       loader.addEventListener('load',function(){
-        console.log("loaded ", src);
-        console.log(lqip);
         loader.remove();
         lqip.src = src;
         lqip.removeAttribute("lqip");
