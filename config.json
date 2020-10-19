@@ -71,6 +71,12 @@
         "name": "Promo Image",
         "type": "file",
         "description": "Promo image of the work"
+      },
+      {
+        "property":"link",
+        "name": "Project link",
+        "type": "url",
+        "description": "Link to the project site or code"
       }
     ]
   }],

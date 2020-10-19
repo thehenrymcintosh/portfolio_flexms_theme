@@ -20,7 +20,7 @@
   <div class="projects">
 
     {% for project in page.data.projects %}
-      <a class="project" href="/{{ project.slug }}">
+      <a class="project" href="/{{ project.data.link }}">
         <h4 class="project__title">{{ project.data.name }}</h4>
         <span class="project__subtitle">{{ project.data.summary }}</span>
         <span class="project__company">@{{ project.data.at }}</span>

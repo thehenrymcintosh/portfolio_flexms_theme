@@ -12,7 +12,7 @@
 
     var lqips = document.querySelectorAll("img[lqip]");
     function load(lqip) {
-      var src = lqip.src.split("?")[0] + "?w=400&h=290&alg=gaussian";
+      var src = lqip.src.split("?")[0] + "?w=400&h=290&alg=lanczos3";
       var loader = document.createElement("img");
       loader.src = src;
       loader.addEventListener('load',function(){
