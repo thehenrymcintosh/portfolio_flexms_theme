@@ -1,5 +1,5 @@
 {% include 'header' %}
-<section class="home-hero">
+<section class="home-hero mw">
 
   <h1><span>Hi,</span> <span>I'm</span> <strong class="orange underline">Henry</strong></h1>
   <h2 class="fade-up-in"><em>I make <span class="green">things</span> on the <span class="green">internet</span></em></h2>
@@ -16,11 +16,11 @@
 </section>
 
 <section class="projects-wrapper" id="projects">
-  <h3 class="section-title">Projects</h3>
+  <h3 class="section-title mw">Projects</h3>
   <div class="projects">
 
     {% for project in page.data.projects %}
-      <a class="project" href="{{ project.data.link }}" target="_blank" rel="noreferrer">
+      <a class="project" href="{{ project.data.link }}" target="_blank" rel="nofollow noreferrer">
         <h4 class="project__title">{{ project.data.name }}</h4>
         <span class="project__subtitle">{{ project.data.summary }}</span>
         <span class="project__company">@{{ project.data.at }}</span>
@@ -34,7 +34,7 @@
 </section>
 
 <section class="experience-wrapper" id="experience">
-  <h3 class="section-title">Experience</h3>
+  <h3 class="section-title mw">Experience</h3>
   <div class="experiences">
 
     {% for experience in page.data.work_experience %}
@@ -54,11 +54,11 @@
   </div>
 </section>
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section mw">
   <h3 class="section-title">Contact</h3>
   <p class="section-p">{{ page.data.contact_text }}</p>
   {% for link in page.data.contact_links %}
-    <a class="contact-link" target="_blank" rel="noopener" href="{{ link.data.url }}">{{ link.data.title }}</a>
+    <a class="contact-link"  target="_blank" rel="nofollow noreferrer noopener" href="{{ link.data.url }}">{{ link.data.title }}</a>
   {% endfor %}
 </section>
 
