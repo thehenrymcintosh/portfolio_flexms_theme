@@ -25,7 +25,7 @@
         <span class="project__subtitle">{{ project.data.summary }}</span>
         <span class="project__company">@{{ project.data.at }}</span>
         <span class="project__link"><span class="visually-hidden">View Project</span></span>
-        <img class="project__img" src="{% include "includes/to_lqip", asset: project.data.promo_image.location %}" lqip alt="{{ project.data.promo_image.caption }}">
+        <img class="project__img" src="{% include "includes/to_lqip", asset: project.data.promo_image.location %}" alt="{{ project.data.promo_image.caption }}">
       </a>
     {% endfor %}
 
