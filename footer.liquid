@@ -10,9 +10,14 @@
   };
   document.addEventListener("DOMContentLoaded", function() {
 
-    var lqips = document.querySelectorAll("img[lqip]");
+    var lqips = document.querySelectorAll("img[src]")
+      .filter(function(element){
+        return element.src.includes("?lqip") || element.src.includes("&lqip")
+      });
     function load(lqip) {
-      var src = lqip.src.split("?")[0] + "?w=400&h=290&alg=lanczos3";
+      var [src,qs] = lqip.src.split("?");
+      qs = qs.split("&").filter((section)=>!section.includes("lqip")).join("&");
+      src = src + qs;
       var loader = document.createElement("img");
       loader.src = src;
       loader.addEventListener('load',function(){
