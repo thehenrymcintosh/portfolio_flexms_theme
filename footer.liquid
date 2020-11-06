@@ -10,9 +10,12 @@
   };
   document.addEventListener("DOMContentLoaded", function() {
 
-    var lqips = document.querySelectorAll("img[src]")
-      .filter(function(element){
-        return element.src.includes("?lqip") || element.src.includes("&lqip")
+    var lqips = [];
+    document.querySelectorAll("img[src]")
+      .forEach(function(element){
+        if ( element.src.includes("?lqip") || element.src.includes("&lqip") ) {
+          lqips.push(element);
+        }
       });
     function load(lqip) {
       var [src,qs] = lqip.src.split("?");
