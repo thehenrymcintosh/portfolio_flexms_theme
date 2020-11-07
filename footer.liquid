@@ -11,12 +11,18 @@
   document.addEventListener("DOMContentLoaded", function() {
 
     var lqips = [];
-    document.querySelectorAll("img[src]")
-      .forEach(function(element){
-        if ( element.src.includes("?lqip") || element.src.includes("&lqip") ) {
-          lqips.push(element);
-        }
-      });
+
+    function setLqips(){
+      var newlqips = [];
+      document.querySelectorAll("img[src]")
+        .forEach(function(element){
+          if ( element.src.includes("?lqip") || element.src.includes("&lqip") ) {
+            newlqips.push(element);
+          }
+        });
+      lqips = newlqips;
+    }
+    setLqips();
     function load(lqip) {
       var [src,qs] = lqip.src.split("?");
       qs = qs.split("&").filter((section)=>!section.includes("lqip")).join("&");
@@ -26,8 +32,7 @@
       loader.addEventListener('load',function(){
         loader.remove();
         lqip.src = src;
-        lqip.removeAttribute("lqip");
-        lqips = document.querySelectorAll("img[lqip]");
+        setLqips();
       })
     }
     function onScroll(event) {
