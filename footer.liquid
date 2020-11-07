@@ -20,7 +20,7 @@
     function load(lqip) {
       var [src,qs] = lqip.src.split("?");
       qs = qs.split("&").filter((section)=>!section.includes("lqip")).join("&");
-      src = src + qs;
+      src = src + "?" + qs;
       var loader = document.createElement("img");
       loader.src = src;
       loader.addEventListener('load',function(){
