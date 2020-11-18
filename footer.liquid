@@ -32,6 +32,7 @@
       loader.addEventListener('load',function(){
         loader.remove();
         lqip.src = src;
+        lqip.setAttribute("loaded","");
         setLqips();
       })
     }
@@ -39,7 +40,7 @@
       var lqip;
       for ( let i = 0; i < lqips.length; i++ ) {
         lqip = lqips[i];
-        if (isInViewport(lqip)) {
+        if (isInViewport(lqip) && !lqip.hasAttribute("loaded");) {
           load(lqip);
         }
       }
