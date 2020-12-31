@@ -26,7 +26,6 @@
         <span class="project__company">@{{ project.data.at }}</span>
         <span class="project__link"><span class="visually-hidden">View Project</span></span>
         <img class="project__img" src="{% include "includes/to_lqip", asset: project.data.promo_image.location %}" alt="{{ project.data.promo_image.caption }}">
-        <div style="height: 100px; width: 100px; background-size: cover; background-image: url('{% include "includes/to_lqip", asset: project.data.promo_image.location, w: "100" %}'); "></div>
       </a>
     {% endfor %}
 
