@@ -1,4 +1,1 @@
-{% unless w %}
-  {% assign w = "1200" %}
-{% endunless %}
-{{ asset | replace: "flexcdn.ams3.digitaloceanspaces.com/henrymcintosh.io", "henrymcintosh.lqip.app" | append: "?lqip=rec&w=" | append: w }}
+{% unless w %}{% assign w = "1200" %}{% endunless %}{{ asset | replace: "flexcdn.ams3.digitaloceanspaces.com/henrymcintosh.io", "henrymcintosh.lqip.app" | append: "?lqip=rec&w=" | append: w }}
